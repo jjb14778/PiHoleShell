@@ -16,7 +16,7 @@ True or False, if you set it to False when Blocking was set to true, it will upd
 This will dump the response instead of the formatted object
 
 .EXAMPLE
-Set-PiHoleDnsBlocking -PiHoleServer "http://pihole.domain.com:8080" -Password "fjdsjfldsjfkldjslafjskdl" -Gravity True
+Update-PiHoleGravity -PiHoleServer "http://pihole.domain.com:8080" -Password "fjdsjfldsjfkldjslafjskdl" -Gravity True
     #>
     [CmdletBinding()]
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '', Justification = 'Does not change state')]
