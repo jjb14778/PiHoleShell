@@ -137,7 +137,6 @@ Import-PiHoleConfig -PiHoleServer "http://pihole.domain.com:8080" -Password "fjd
             $ResponseGravity = Update-PiHoleGravity -PiHoleServer $PiHoleServer -Password $Password -Gravity $Gravity -RawOutput $RawOutput
         }		
         if ($RawOutput) {
-            Write-Output $Response
             write-output $ResponseGravity
         }
 
