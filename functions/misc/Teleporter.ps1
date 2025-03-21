@@ -101,7 +101,7 @@ Import-PiHoleConfig -PiHoleServer "http://pihole.domain.com:8080" -Password "fjd
 
     try {
         $Sid = Request-PiHoleAuth -PiHoleServer $PiHoleServer -Password $Password
-        $jsonTeleporterRestore='{
+        $jsonRestoreOptions='{
           "config": true,
           "dhcp_leases": true,
           "gravity": {
@@ -114,7 +114,7 @@ Import-PiHoleConfig -PiHoleServer "http://pihole.domain.com:8080" -Password "fjd
             "client_by_group": true
           }
         }'
-        $BodyCMDhashtable = @{}
+
         $jsonConfigFile = @{ 
             file=$ConfigFile # no leading @ sign.
         }
@@ -127,8 +127,9 @@ Import-PiHoleConfig -PiHoleServer "http://pihole.domain.com:8080" -Password "fjd
             ContentType = "multipart/form-data"
             Body        = $BodyCMDhashtable
         }
-
-        $jsonTeleporterRestore.psobject.properties | Foreach { $BodyCMDhashtable[$_.Name] = $_.Value }
+        
+        $BodyCMDhashtable = @{} # Create body Hashtable from json
+        $jsonRestoreOptions.psobject.properties | Foreach { $BodyCMDhashtable[$_.Name] = $_.Value }
         $jsonConfigFile.psobject.properties | Foreach { $BodyCMDhashtable[$_.Name] = $_.Value }
                 
         $Response = Invoke-RestMethod @Params
