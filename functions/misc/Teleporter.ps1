@@ -16,7 +16,7 @@ Specify the Pihole Teleporter Config zip export file
 This will dump the response instead of the formatted object
 
 .EXAMPLE
-Get-PiHoleDnsBlockingStatus -PiHoleServer "http://pihole.domain.com:8080" -Password "fjdsjfldsjfkldjslafjskdl" -ConfigFile "c:\config.zip"
+Export-PiHoleConfig -PiHoleServer "http://pihole.domain.com:8080" -Password "fjdsjfldsjfkldjslafjskdl" -ConfigFile "c:\config.zip"
     #>
     [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "Password")]
     param (
