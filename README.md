@@ -2,11 +2,9 @@
 A PowerShell module for PiHole v6 API.
 
 ## Recently added Module Functions
-Update-Piholegravity (updateGravity.ps1)
+Update-PiholeGravity (updateGravity.ps1)
 
-Export-PiholeConfig (teleporter.ps1)
-
-Import-PiholeConfig (teleporter.ps1)
+Export-PiholeConfig, Import-PiholeConfig (teleporter.ps1)
 
 ## Installation
 
